@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "WH40k 11版 ポイントコスト表示",
+  "version": "0.1.0",
+  "description": "wikiwiki.jp の Warhammer 40k 11版ユニットデータページに、Munitorum Field Manual のポイントコストを挿入して表示します。",
+  "permissions": ["storage"],
+  "host_permissions": ["https://mfm.warhammer-community.com/*"],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://wikiwiki.jp/40k-11th/*"],
+      "js": [
+        "src/army-map.js",
+        "src/normalize.js",
+        "src/mfm-parser.js",
+        "src/content.js"
+      ],
+      "css": ["styles/inject.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

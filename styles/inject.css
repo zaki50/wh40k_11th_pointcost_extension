@@ -1,0 +1,124 @@
+/* 挿入するポイントコストカードのスタイル。wiki 側の CSS と競合しにくいよう
+   すべて #wh40k-pointcost-card 配下に限定し、値も明示指定する。 */
+
+#wh40k-pointcost-card {
+  box-sizing: border-box;
+  margin: 8px 0 16px;
+  padding: 12px 14px;
+  border: 1px solid #b8860b;
+  border-left: 5px solid #b8860b;
+  border-radius: 6px;
+  background: #fffbe6;
+  color: #222;
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: system-ui, -apple-system, "Segoe UI", "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP", Meiryo, sans-serif;
+}
+
+#wh40k-pointcost-card * {
+  box-sizing: border-box;
+}
+
+#wh40k-pointcost-card .wh40k-pc-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: #6b4e00;
+}
+
+#wh40k-pointcost-card .wh40k-pc-unitname {
+  color: #111;
+}
+
+#wh40k-pointcost-card .wh40k-pc-en {
+  color: #777;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+#wh40k-pointcost-card .wh40k-pc-group {
+  font-weight: 700;
+  font-size: 13px;
+  color: #6b4e00;
+  margin-top: 6px;
+  padding-top: 4px;
+  border-top: 1px dashed #d9c47a;
+}
+
+#wh40k-pointcost-card .wh40k-pc-tier {
+  margin: 4px 0;
+}
+
+#wh40k-pointcost-card .wh40k-pc-label {
+  font-weight: 600;
+  font-size: 13px;
+  color: #555;
+  margin-top: 4px;
+}
+
+#wh40k-pointcost-card ul.wh40k-pc-costs {
+  list-style: none;
+  margin: 2px 0;
+  padding-left: 0;
+}
+
+#wh40k-pointcost-card ul.wh40k-pc-costs li {
+  margin: 1px 0;
+  padding: 0;
+}
+
+#wh40k-pointcost-card .wh40k-pc-models {
+  color: #444;
+}
+
+#wh40k-pointcost-card .wh40k-pc-points {
+  font-weight: 700;
+  color: #a12;
+}
+
+#wh40k-pointcost-card .wh40k-pc-note {
+  color: #666;
+  font-size: 13px;
+}
+
+#wh40k-pointcost-card .wh40k-pc-error {
+  color: #a12;
+}
+
+#wh40k-pointcost-card .wh40k-pc-source {
+  margin-top: 8px;
+  font-size: 11px;
+}
+
+#wh40k-pointcost-card .wh40k-pc-source a {
+  color: #8a6d00;
+  text-decoration: underline;
+}
+
+/* wiki のダークテーマに追従する簡易対応 */
+@media (prefers-color-scheme: dark) {
+  #wh40k-pointcost-card {
+    background: #2a2410;
+    color: #eee;
+    border-color: #b8860b;
+  }
+  #wh40k-pointcost-card .wh40k-pc-title {
+    color: #e8c95a;
+  }
+  #wh40k-pointcost-card .wh40k-pc-unitname {
+    color: #fff;
+  }
+  #wh40k-pointcost-card .wh40k-pc-label {
+    color: #cfcfcf;
+  }
+  #wh40k-pointcost-card .wh40k-pc-models {
+    color: #ddd;
+  }
+  #wh40k-pointcost-card .wh40k-pc-points {
+    color: #ff9c9c;
+  }
+  #wh40k-pointcost-card .wh40k-pc-note {
+    color: #bbb;
+  }
+}
