@@ -1,3 +1,6 @@
+// Copyright 2026 YAMAZAKI Makoto
+// SPDX-License-Identifier: Apache-2.0
+
 // 日本語アーミー名 → mfm 英語スラッグ の対応表。
 // wikiwiki.jp の URL 内アーミー名（例 ".../アーミー/スペースマリーン/..."）を
 // https://mfm.warhammer-community.com/ja/{slug} の {slug} に変換するために使う。

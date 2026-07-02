@@ -1,3 +1,6 @@
+// Copyright 2026 YAMAZAKI Makoto
+// SPDX-License-Identifier: Apache-2.0
+
 // wikiwiki.jp/40k-11th のユニットデータページで動作するメインスクリプト。
 // URL からアーミー名・ユニット名を取り出し、mfm のポイントコストをページ先頭に挿入する。
 //

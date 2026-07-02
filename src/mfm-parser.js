@@ -1,3 +1,6 @@
+// Copyright 2026 YAMAZAKI Makoto
+// SPDX-License-Identifier: Apache-2.0
+
 // mfm.warhammer-community.com/{ja,en}/{slug} の HTML 文字列を解析して
 // ユニットごとのポイントコスト一覧を取り出す。
 //

@@ -1,3 +1,6 @@
+/* Copyright 2026 YAMAZAKI Makoto */
+/* SPDX-License-Identifier: Apache-2.0 */
+
 /* 挿入するポイントコストカードのスタイル。wiki 側の CSS と競合しにくいよう
    すべて #wh40k-pointcost-card 配下に限定し、値も明示指定する。 */
 

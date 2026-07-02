@@ -1,3 +1,6 @@
+// Copyright 2026 YAMAZAKI Makoto
+// SPDX-License-Identifier: Apache-2.0
+
 // ユニット名マッチング用のユーティリティ。
 // wiki（URL 由来）と mfm（HTML 由来）はどちらも日本語ユニット名だが、
 // 中黒・空白・全半角・括弧などの表記ゆれがあるため正規化して比較する。

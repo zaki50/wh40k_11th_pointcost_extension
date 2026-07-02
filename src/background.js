@@ -1,3 +1,6 @@
+// Copyright 2026 YAMAZAKI Makoto
+// SPDX-License-Identifier: Apache-2.0
+
 // Service Worker（MV3）。
 // content script からの依頼を受けて mfm.warhammer-community.com/ja/{slug} を取得する。
 //
