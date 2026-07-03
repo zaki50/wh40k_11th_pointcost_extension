@@ -10,8 +10,15 @@
   },
   "permissions": ["storage"],
   "host_permissions": ["https://mfm.warhammer-community.com/*"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "wh40k-pointcost@zakky.org",
+      "strict_min_version": "115.0"
+    }
+  },
   "background": {
-    "service_worker": "src/background.js"
+    "service_worker": "src/background.js",
+    "scripts": ["src/background.js"]
   },
   "content_scripts": [
     {

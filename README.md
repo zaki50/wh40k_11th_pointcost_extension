@@ -65,9 +65,22 @@ styles/inject.css       # 挿入カードのスタイル
 
 ## インストール（開発版）
 
-1. Chrome で `chrome://extensions` を開く。
+### Chrome / Edge 等
+
+1. `chrome://extensions` を開く。
 2. 右上の「デベロッパーモード」をオンにする。
 3. 「パッケージ化されていない拡張機能を読み込む」で、このリポジトリのフォルダを選択する。
+
+### Firefox
+
+1. `about:debugging#/runtime/this-firefox` を開く。
+2. 「一時的なアドオンを読み込む」で、このリポジトリの `manifest.json` を選択する。
+
+Chrome と Firefox は単一の `manifest.json` で両対応しています（`background` に
+`service_worker`（Chrome 用）と `scripts`（Firefox 用）の両方を記載）。
+Firefox は Manifest V3 の `service_worker` をサポートしないため `scripts`（イベントページ）で
+同じ `src/background.js` を実行します。ブラウザ API は `chrome.*` を使用しており、Firefox の
+互換シムでそのまま動作します。
 
 ## 動作確認
 
