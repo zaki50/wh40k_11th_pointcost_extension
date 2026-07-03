@@ -23,6 +23,25 @@
   box-sizing: border-box;
 }
 
+#wh40k-pointcost-card .wh40k-pc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+  padding: 2px 8px;
+  border: 1px solid #d9c47a;
+  border-radius: 999px;
+  background: #fff4cc;
+  color: #7a5c00;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+#wh40k-pointcost-card .wh40k-pc-badge-mark {
+  font-size: 12px;
+}
+
 #wh40k-pointcost-card .wh40k-pc-title {
   font-weight: 700;
   font-size: 15px;
@@ -123,5 +142,10 @@
   }
   #wh40k-pointcost-card .wh40k-pc-note {
     color: #bbb;
+  }
+  #wh40k-pointcost-card .wh40k-pc-badge {
+    background: #3a3213;
+    border-color: #6b5a1f;
+    color: #e8c95a;
   }
 }

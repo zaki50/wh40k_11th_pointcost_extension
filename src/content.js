@@ -9,6 +9,8 @@
 
 (function () {
   const CARD_ID = "wh40k-pointcost-card";
+  // このカードが拡張機能による挿入であることを示すラベル（wiki 本文と区別するため）。
+  const EXT_NAME = "WH40k ポイントコスト表示";
 
   // location.pathname から [アーミー名, ユニット名] を取り出す。対象外なら null。
   function parseWikiPath() {
@@ -50,6 +52,11 @@
       anchor.insertBefore(card, anchor.firstChild);
     }
     card.textContent = "";
+    // 拡張機能による挿入であることが分かるバッジを常に先頭に出す。
+    const badge = el("div", "wh40k-pc-badge");
+    badge.appendChild(el("span", "wh40k-pc-badge-mark", "🔨"));
+    badge.appendChild(el("span", null, `拡張機能「${EXT_NAME}」による挿入`));
+    card.appendChild(badge);
     buildInner(card);
   }
 
