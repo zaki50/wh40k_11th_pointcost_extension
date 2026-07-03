@@ -10,7 +10,10 @@
 (function () {
   const CARD_ID = "wh40k-pointcost-card";
   // このカードが拡張機能による挿入であることを示すラベル（wiki 本文と区別するため）。
-  const EXT_NAME = "WH40k ポイントコスト表示";
+  // 拡張機能名は manifest.json の定義から実行時に取得する（content script でも利用可）。
+  const EXT_NAME =
+    (chrome.runtime.getManifest && chrome.runtime.getManifest().name) ||
+    "ポイントコスト表示拡張";
 
   // location.pathname から [アーミー名, ユニット名] を取り出す。対象外なら null。
   function parseWikiPath() {
