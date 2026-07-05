@@ -2,3 +2,9 @@ dist/
 node_modules/
 *.zip
 .DS_Store
+
+# Xcode (Safari 拡張プロジェクト)
+xcuserdata/
+*.xcuserstate
+DerivedData/
+build/
