@@ -61,6 +61,7 @@ src/army-map.js         # 日本語アーミー名 → 英語スラッグ 対応
 src/mfm-parser.js       # mfm HTML → ユニット/ポイント配列
 src/normalize.js        # ユニット名の正規化・別名解決
 styles/inject.css       # 挿入カードのスタイル
+safari/                 # Safari 用 Xcode プロジェクト（上記リソースを相対参照）
 ```
 
 ## インストール（開発版）
@@ -81,6 +82,35 @@ Chrome と Firefox は単一の `manifest.json` で両対応しています（`b
 Firefox は Manifest V3 の `service_worker` をサポートしないため `scripts`（イベントページ）で
 同じ `src/background.js` を実行します。ブラウザ API は `chrome.*` を使用しており、Firefox の
 互換シムでそのまま動作します。
+
+### Safari
+
+Safari は WebExtension を macOS/iOS アプリに埋め込む形で動かします。
+`safari/WH40kPointCost/` に Apple 公式ツール（`safari-web-extension-converter`）で生成した
+Xcode プロジェクトを同梱しています。拡張リソースはリポジトリ直下の `manifest.json` /
+`src` / `styles` / `icons` を相対参照しているため、コードはブラウザ間で単一です。
+
+1. `safari/WH40kPointCost/WH40kPointCost.xcodeproj` を Xcode で開く。
+2. スキーム「WH40kPointCost (macOS)」を選び、自分の Apple ID で署名して Run
+   （無料アカウントでもローカル実行可）。
+3. Safari → 設定 → 詳細 →「Web 開発者向けの機能を表示」を ON。
+4. Safari → 設定 → 機能拡張 で「WH40kPointCost」を有効化し、`wikiwiki.jp` および
+   `mfm.warhammer-community.com` へのアクセスを許可する。
+
+プロジェクトを再生成する場合（`safari/` を削除してから）:
+
+```sh
+xcrun safari-web-extension-converter . \
+  --project-location safari \
+  --app-name "WH40kPointCost" \
+  --bundle-identifier org.zakky.wh40k-pointcost --no-open
+```
+
+生成直後は拡張リソースの参照先が変換時の作業ディレクトリ絶対パスになるため、
+`safari/WH40kPointCost/WH40kPointCost.xcodeproj/project.pbxproj` 内の該当パスを
+リポジトリ直下への相対参照（`../../../manifest.json` 等）に直す必要があります。
+
+App Store への配布には Apple Developer Program（年額）とアプリ審査が必要です。
 
 ## 動作確認
 
