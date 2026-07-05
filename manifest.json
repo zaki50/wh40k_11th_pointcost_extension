@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "WH40k 11版 ポイントコスト表示",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "wikiwiki.jp の Warhammer 40k 11版ユニットデータページに、Munitorum Field Manual のポイントコストを挿入して表示します。",
   "icons": {
     "16": "icons/icon16.png",
@@ -13,7 +13,10 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "wh40k-pointcost@zakky.org",
-      "strict_min_version": "115.0"
+      "strict_min_version": "115.0",
+      "data_collection_permissions": {
+          "required": ["none"]
+      }
     }
   },
   "background": {
